@@ -1,0 +1,164 @@
+ <%- include('base/profile')%>
+
+  <div class="col-md-9 task-login-right">
+    <h5>Add Project</h5>
+    <hr>
+    <form action="/project" method="post" enctype="multipart/form-data">
+      <div class="row">
+          <div class="col-md-3">
+            <label for="inputEmail4">Project Name : </label>
+          </div>
+          <div class="col-md-9">
+              <input type="text" class="form-control" name="project_title">
+          </div>       
+        </div>
+
+        <div class="row my-4">
+          <div class="col-md-3">
+            <label for="project_type">Project Type : </label>
+          </div>
+          <div class="col-md-9">
+              <div class="row">
+                <div class="col-md-4">
+                    <input class="form-check-input" type="radio" name="project_type" value="Bidding">
+                    Bidding
+                </div>
+                <div class="col-md-4">
+                    <input class="form-check-input" type="radio" name="project_type" value="Internal">
+                    Internal
+                  
+                </div>
+                <div class="col-md-4">
+                    <input class="form-check-input" type="radio" name="project_type" value="External">
+                    External
+                </div>
+              </div>
+          </div>       
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <label for="date">Project Date : </label>
+          </div>
+          <div class="col-md-9">
+              <input type="date" class="form-control" name="project_date">
+          </div>       
+        </div>
+
+       <div class="row my-4">
+          <div class="col-md-3">
+            <label for="project_detail">Project Details : </label>
+          </div>
+          <div class="col-md-9">
+              <textarea class="form-control" name="project_detail" rows="3"></textarea>
+          </div>       
+        </div>
+
+        <div class="row my-4">
+          <div class="col-md-3">
+            <label for="Technology">Teachnology</label>
+          </div>
+          <div class="col-md-9">
+            <select class="form-control" name="project_tech">
+            <option selected>Node js</option>
+            <option>React js</option>
+            <option>PHP</option>
+            <option>Python</option>
+            <option>ROR</option>
+          </select>
+          </div>       
+        </div>
+
+         <div class="row my-2">
+           <div class="col-md-3">
+            <label for="project_file">Project File : </label>
+          </div>
+          <div class="col-md-9">
+              <input type="file" name="project_photo">
+          </div>       
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-sm">Add Project</button>
+    </form>
+
+  </div>
+
+  </div>
+  <%- include('base/footer')%>
+
+
+ <!-- ( {$and:
+  [
+  {founded_year:2004},
+  {$or:[{category_code:"web"},{category_code:"socila"},{founded_month:10}]},
+  {$or:[{category_code:"web"},{category_code:"socila"}]}
+  ]
+  })
+
+  (
+    { $and: [ { $or: [ { founded_year: 2004 }, { founded_month: 10 } ] }, { $or: [ { category_code: 'social'}, { category_code: 'web' }  ] } ] }
+  )
+
+
+  (
+    {
+      $expr:{
+        $eq:[
+        "$permalink","$twitter_username"
+        ]
+      }
+    }
+  )
+
+
+  db.companies.find(     {      
+     $expr:{        
+        $eq:[ "$permalink","$twitter_username" ]       
+}     }   ).count()
+
+
+
+db.listingsAndReviews.find(
+  {
+    $and:[
+    {accommodates:{$gt:6}},
+    {number_of_reviews:50}
+    ]
+  },
+  {
+    number_of_reviews:1,
+    accommodates:1
+  }
+)
+
+
+db.listingsAndReviews.find(
+  {
+    $and:[
+    {property_type:"House"},
+    {amenities:"Changing table"}
+    ]
+  },
+  {
+    property_type:1,
+    amenities:1
+  }
+)
+
+
+
+db.companies.find(
+  {offices:{$elemMatch:{
+    city:"Seattle"
+  }
+    
+  }},{
+    offices:1
+  }
+
+)
+
+
+db.trips.findOne({
+  "start station location.coordinates": {$lt:-74}
+}) -->

@@ -1,0 +1,35 @@
+<%- include('base/profile')%>
+    <div class="col-md-9 px-0">
+      <div class="logout-content"><a href="/logout">Logout</a></div>    
+     <div class="task-login-right">
+ 
+      <div class="row">
+        <div class="col-md-6">
+          <h3>My Task</h3>
+        </div>
+        <div class="col-md-6"  id="addmytask">
+          <p class="add-task-btn"><i class="fas fa-tasks"></i> Add Task</p> 
+        </div>
+      </div>
+      <hr class="my-0">
+      <div class="row">       
+        <div class="task-box">
+          
+          <%if(allTask.length){%>
+              <h5># Tasks - <%=allTask.length%></h5>
+           <%allTask.forEach(function(task,index){ %>
+        
+            <p class="deletemytask" data-id="<%=task._id%>"><small class="circle"></small>
+               <%=task.task_title %></p>
+         <% }) %> 
+        <% } %>  
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+<script src="/javascripts/script.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <%- include('base/footer')%>

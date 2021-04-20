@@ -1,0 +1,78 @@
+<%- include('base/header')%>
+  <a href="/">
+    <h2 class="brand-name-login">
+      <small class="brand-text">E</small>mplo<small class="brand-text">Y</small>ee
+    </h2>
+  </a>
+  <div class="row login-content">
+    <div class="col-md-4 login-right">
+      <h3 class="login-right-title">Welcome Back !</h3>
+      <p class="login-text">
+        To Keep Connect with us phone login with your personal info
+      </p>
+      <a href="/login" class="login-btn login-right-btn">SIGN IN</a>
+    </div>
+    <div class="col-md-8 login-left registration-form">
+      <h2 class="login-title">Create Account</h2>
+      <div class="icons">
+        <a href="/">
+          <p class="icon">f</p>
+        </a>
+        <a href="/">
+          <p class="icon">G+</p>
+        </a>
+        <a href="/">
+          <p class="icon">in</p>
+        </a>
+      </div>
+      <p class="text-center">Or Use your email for registration :</p>
+      <form action="/registration" method="POST">
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" name="fullname" class="fa form-input" placeholder=" &#xf007;  Name" />
+            <div class="form-text text-danger"> <%=error?error['fullname']:''%></div>
+          </div>
+          <div class="col-md-6">
+            <input type="email" name="userid" class="fa form-input" placeholder=" &#xf0e0;  Email" />
+            <div class="form-text text-danger"> <%=error?error['userid']:''%></div>
+          </div>
+        </div>
+        <input type="password" name="password" class="fa form-input" placeholder=" &#xf023;  Password " />
+        <div class="form-text text-danger"> <%=error?error['password']:''%></div>
+        <select class="fa form-input" name="department">
+          <option selected>Department</option>
+          <option value="Full Stack Developer">Full Stack Developer</option>
+          <option value="Back End Developer">Back End Developer</option>
+          <option value="Front End Developer">Front End Developer</option>
+        </select>
+        <div class="row">
+          <div class="col-md-4">
+            <select class="fa form-input" onchange="showStates(this.value)" name="country">
+              <option selected>Country...</option>
+              <%for(Country of Countries){%>
+                <option value="<%=Country.id%>">
+                  <%=Country.countryName%>
+                </option>
+                <%}%>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <select class="fa form-input" id="states" onchange="showCities(this.value)" name="state">
+              <option selected>State...</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <select class="fa form-input" id=cities name="city">
+              <option selected>City...</option>
+            </select>
+          </div>
+        </div>
+
+        <input type="submit" class="login-btn" value="SING UP" />
+      </form>
+    </div>
+  </div>
+  <script src="javascripts/script.js"></script>
+</body>
+
+</html>

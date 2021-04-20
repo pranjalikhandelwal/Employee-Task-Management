@@ -1,0 +1,4 @@
+2. Forget password
+3. snap of project
+1. remember me in login set cookie
+4. nodemail to send a mail

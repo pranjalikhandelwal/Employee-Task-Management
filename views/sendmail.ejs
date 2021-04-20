@@ -1,0 +1,84 @@
+<%- include('base/profile')%>
+
+    <div class="col-md-9 task-login-right">
+        <h3>Send Mail</h3>
+      <hr>
+    <!-- Mail Form section -->
+      <div class="send-mail-form">
+      <div class="row my-4">
+          <div class="col-md-3">
+            <label for="inputEmail4">From  : </label>
+          </div>
+          <div class="col-md-9">
+              <input type="text" class="form-control" name="project_title" value="<%=emailsender%>">
+          </div>       
+      </div>
+
+       <div class="row my-4">
+          <div class="col-md-3">
+            <label for="email">To : </label>
+          </div>
+          <div class="col-md-9">
+              <input type="email" class="form-control" name="emailSend">
+          </div>       
+      </div>
+      
+      <div class="row my-4">
+          <div class="col-md-3">
+            <label for="Subject">Subject : </label>
+          </div>
+          <div class="col-md-9">
+              <input type="text" class="form-control" name="emailSubject">
+          </div>       
+      </div>
+      <div class="row mb-3">
+          <div class="col-md-3">
+            <label for="emailBody">Message : </label>
+          </div>
+          <div class="col-md-9">
+             <textarea class="form-control" name="emailBody" rows="5">
+              <%if(projectDetails){%>
+              <% projectDetails.forEach(function(project,index){ %>  
+               Project Name :<%=project.project_title %>
+               Project Details :<%=project.project_detail%>
+              <% }) %>
+              <% } %>
+        </textarea>
+          </div>       
+      </div>
+        <button type="submit" class="btn btn-primary btn-sm" id="send">Send</button>
+    
+     </div>
+
+  </div>
+
+  <script>
+    document.getElementById('send').addEventListener('click',()=>{
+      console.log('clicked ');
+      fetch('/sendmail',{
+        method:"post",
+        body:JSON.stringify({
+          emailSend:document.getElementsByName('emailSend')[0].value,
+          emailSubject:document.getElementsByName('emailSubject')[0].value,
+          emailBody:document.getElementsByName('emailBody')[0].value
+        }),
+        headers: {
+        "Content-type": "application/json; charset=UTF-8"
+       }
+      }).then((response)=>{
+         swal("Mail Sended !");
+        document.getElementsByName('emailSend')[0].value=''
+        document.getElementsByName('emailSubject')[0].value=''
+          
+      }).catch((error)=>{
+        console.error(error);
+      })
+    })
+  </script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <%- include('base/footer')%>
+
+
+
+
+

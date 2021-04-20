@@ -1,0 +1,393 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: rgba(255, 99, 71, 0.918); */
+  font-size: .9rem;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  text-transform: capitalize;
+  overflow-y: hidden;
+}
+.profile-img{
+  width: 100%;
+  height: 80px;
+  border-radius: 100%;
+}
+.profile-name{
+  text-align: center;
+  text-transform: capitalize;
+  
+}
+/* navigation Bar */
+.brand-name-login {
+  font-family: "Ubuntu";
+  font-weight: bold;
+  color: #fff;
+  width: 14%;
+  background-color: rgba(255, 99, 71, 0.616);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+}
+.brand-name {
+  color: white;
+  font-family: "Ubuntu";
+  font-weight: bold;
+  text-decoration: none;
+}
+.brand-text {
+  color: yellow;
+  font-family: "Merriweather", serif;
+  animation: brand-up 5s infinite;
+}
+@keyframes brand-up{
+from{color:rgba(255, 255, 0, 0.411);}
+to{color:yellow;}
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 99, 71, 0.918);
+}
+.work-content{
+  background-color: rgba(255, 99, 71, 0.658);
+  padding: 1.5rem 0;
+  border-bottom: 2px solid #000;
+}
+.list {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.1rem;
+  list-style: none;
+}
+.item {
+  text-decoration: none;
+  padding-bottom: 3px;
+  color: white;
+  transition: all 0.2s;
+  margin-top: 1rem;
+}
+.list .item:hover {
+  border-bottom: 2px solid yellow;
+  color: yellow;
+  transform: scale(1.2);
+}
+/* login page */
+.login-content {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+}
+.login-left {
+  color: #555;
+  background-color: #fff;
+  padding: 2rem 4rem 0;
+}
+.registration-form{
+  padding: 0 4rem ;
+}
+.login-title {
+  color: rgb(255, 99, 71);
+  text-align: center;
+  margin: 1rem auto 1rem;
+  border-bottom: 1px solid #eee;
+  /* width: 9rem; */
+}
+.icons {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.icons a {
+  text-decoration: none;
+}
+.icon {
+  border: 1px solid #999;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  color: #000;
+  font-weight: 800;
+  padding-top: 0.5rem;
+  display: inline-block;
+  margin: 0.3rem;
+}
+.form-input {
+  width: 100%;
+  height: 40px;
+  margin-top: .8rem;
+  color: #888;
+  border: 1px solid #eee;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.login-btn {
+  display: inline-block;
+  color: #fff;
+  background-color: rgb(255, 99, 71);
+  border-radius: 2rem;
+  padding: 0.5rem 3.7rem;
+  border: none;
+  margin: 1rem 40%;
+  transition: all 0.3s;
+}
+.login-btn:hover {
+  transform: scale(1.1);
+}
+.login-right {
+  color: #fff;
+  background-color: rgba(255, 99, 71, 0.616);
+  padding: 9rem 4rem 0;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 2;
+}
+.login-right-title {
+  margin-bottom: 2rem;
+}
+.login-right-btn {
+  display: inline-block;
+  margin: 1.5rem 0;
+  background-color: transparent;
+  border: 1px solid #fff;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+.login-right-btn:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+/* Task Page new */
+.task-login-left {
+  /* height: 1000px; */
+  height: 100vh;
+  color: #fff;
+  padding-top: 1.7rem;
+  background-color: rgba(255, 99, 71, 0.918);
+  font-size: .9rem;
+}
+.task-login-left-content {
+  padding: 5rem 0;
+}
+.forget-password{
+  display: inline-block;
+  width: 100%;
+  text-align: end;
+  margin-top: .8rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.forget-password:hover{
+  color: #000;
+  text-decoration: underline;
+}
+
+.task-login-left a {
+  color: #fff;
+  text-decoration: none;
+  line-height: 2;
+  padding: 0.2rem 2.5rem;
+  display: inline-block;
+  width: 100%;
+  transition: all 0.2s;
+}
+.task-login-left a:hover {
+  width: 100%;
+  background-color: rgb(255, 99, 71);
+  box-shadow: 4px 4px 4px rgba(238, 238, 238, 0.178);
+}
+.logout-content {
+  background-color: rgba(255, 99, 71, 0.918);
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+}
+.logout-content a{
+  position:absolute;
+  right: 1rem;
+  text-decoration: none;
+  top: 10px;
+  color: #fff;
+  display: inline-block;
+}
+.task-login-left h5{
+  font-size: 1.2rem;
+}
+.task-login-right {
+  padding: 1rem 2rem;
+  background-color: #fff;
+  color: #000;
+  font-size: .85rem;
+}
+.send-mail-form{
+  margin: 1.5rem 3rem;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.add-task-btn {
+  display: inline-block;
+  color: white;
+  background-color: rgba(255, 99, 71, 0.582);
+  cursor: pointer;
+  padding: 0.7rem 2rem;
+  border-radius: 4px;
+  transition: all 0.3s;
+  margin-left: 15rem;
+  height: 42px;
+  width: 150px;
+}
+.add-task-btn:hover {
+  color: #fff;
+  background-color: rgb(255, 99, 71);
+  box-shadow: 4px 4px 4px #eee;
+}
+.task-box {
+  font-size: .9rem;
+  text-transform: capitalize;
+  width: 100%;
+  border: 1px solid #eee;
+  margin: 0.5rem;
+  padding: 0;
+  border-radius: 4px;
+  overflow-y: auto;
+  height: 350px;
+}
+.task-box h5 {
+  width: 100%;
+  padding: .5rem 1.7rem;
+  background-color: rgba(238, 238, 238, 0.39);
+}
+.task-box p {
+  padding: 0.5rem 1.7rem 0;
+  color: #444;
+  cursor: pointer;
+}
+.task-box p:hover {
+  color: #888;
+}
+.circle {
+  height: 0.5rem;
+  width: 0.5rem;
+  border: 2px solid goldenrod;
+  margin-right: .5rem;
+  border-radius: 100%;
+  display: inline-block;
+}
+/* Snap Project Page */
+.snap-img{
+  width:100%;
+  height: 220px;
+  transition: all .3s;
+  opacity: .8;
+  border-radius: 4px;
+}
+.snap-img:hover{
+  opacity: 1;
+  transform: scale(1.2);
+  cursor: pointer;
+
+}
+.snap-title{
+  font-size: 1.2rem;
+  margin-left: 5rem;
+  margin-top: .5rem;
+}
+.image-detail{
+  width: 100%;
+  height: 250px;
+}
+.project-detail{
+  margin: 2rem;
+}
+
+/* about */
+.aboutus {
+  background-color: rgba(255, 99, 71, 0.781);
+  display: flex;
+}
+.aboutimage {
+  width: 40%;
+  height: 450px;
+  background-size: cover;
+}
+.about {
+  width: 60%;
+  text-align: justify;
+  padding: 8rem 2rem 0;
+}
+
+/* detail technology */
+.descriptions {
+  height: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 1rem;
+}
+
+.detail {
+  background-color: rgba(255, 99, 71, 0.781);
+  color: white;
+  width: 30%;
+  padding: 3rem 1.2rem;
+  text-align: center;
+  line-height: 1.5;
+  clip-path: polygon(0 12%, 100% 0%, 100% 88%, 0 100%);
+  /* transition: transform cubic-bezier(0.175, 0.885, 0.32, 1.275) .8s;
+   */
+   transition: all .8s;
+}
+.detail:hover{
+  transform: rotateY(360deg);
+}
+/* story */
+.storybox {
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 4rem;
+}
+.story {
+  width: 50%;
+  text-align: center;
+}
+/* footer */
+.footer {
+  color: black;
+  background-color: white;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

@@ -1,0 +1,79 @@
+<%- include('base/header')%>
+  <a href="/">
+    <h2 class="brand-name-login">
+      <small class="brand-text">E</small>mplo<small class="brand-text">Y</small>ee
+    </h2>
+  </a>
+  <div class="row login-content">
+    <div class="col-md-4 login-right">
+      <h3 class="login-right-title">Welcome Back !</h3>
+      <p class="login-text">
+        To Keep Connect with us phone login with your personal info
+      </p>
+      <a href="/login" class="login-btn login-right-btn">SIGN IN</a>
+    </div>
+    <div class="col-md-8 login-left">
+      <h2 class="login-title">Change Password</h2>
+      <form action="/changepassword/sendemail" method="POST">
+        <div class="row ">
+          <div class="mt-3 col-md-12">
+            <input type="email" name="email" onchange="hasEmail()" id="uservaild" class="fa form-control" placeholder=" &#xf0e0;  Email" />
+            <div class="form-text text-danger"></div>
+            <div id="usermsg" class="valid-feedback">
+                 Looks good!
+            </div>
+          </div>
+        </div>
+        <input type="submit" class="login-btn" disabled value="Change" />
+      </form>
+    </div>
+  </div>
+  
+  <script>
+   document.getElementsByClassName('login-btn')[1].style.cursor='no-drop'
+  
+    //   Check Email Id exist or not
+ function hasEmail(){
+     var xhttp = new XMLHttpRequest();
+      let getEmail=document.getElementsByName('email')[0].value
+     
+
+       xhttp.open("GET", "/changepassword/hasEmail/"+getEmail, true);
+             xhttp.onreadystatechange = function () {
+                      
+            if (this.readyState == 4 && this.status == 200) {
+            
+                if(this.responseText==0){
+                  // feedback for invalid user
+                  document.getElementById('usermsg').classList.add('invalid-feedback')
+                  document.getElementById('usermsg').classList.remove('valid-feedback')
+                  document.getElementById('usermsg').innerHTML="Please Enter Valid ID"
+
+                  document.getElementById('uservaild').classList.add('is-invalid')
+                  document.getElementById('uservaild').classList.remove('is-valid')
+
+                  document.getElementById('usermsg').innerHTML="Please Enter Valid ID"
+                  
+                }else{
+                // FeedBack for valid user
+                document.getElementById('usermsg').classList.remove('invalid-feedback')
+                document.getElementById('usermsg').classList.add('valid-feedback')
+                document.getElementById('usermsg').innerHTML="Look's good"
+                  
+                document.getElementById('uservaild').classList.add('is-valid')
+                document.getElementById('uservaild').classList.remove('is-invalid')
+
+                document.getElementsByClassName('login-btn')[1].style.cursor='pointer'
+                document.getElementsByClassName('login-btn')[1].disabled = false;
+            
+
+                }
+               }
+            }
+            xhttp.send();
+}
+  </script>
+ 
+</body>
+
+</html>

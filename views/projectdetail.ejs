@@ -1,0 +1,63 @@
+<%- include('base/profile')%>
+<div class="col-md-9 task-login-right">
+  <p class="forget-password" onclick="previousePage()">Back</p>
+  <img class="image-detail" src="/uploads/<%=project.project_photo%>" alt="Project Sanps">
+   
+<div class="row project-detail">
+  <div class="row mb-1">
+       <div class="col-md-6">
+        Project Name :
+      </div>
+      <div class="col-md-6">
+        <%=project.project_title%>
+     </div>
+  </div>
+  <div class="row mb-1">
+    <div class="col-md-6">
+      Project Technology Used :
+    </div>
+    <div class="col-md-6">
+      <%=project.project_tech%>
+    </div>
+  </div>
+  <div class="row mb-1">
+    <div class="col-md-6">
+      Project Details:
+    </div>
+    <div class="col-md-6">
+      <p><%=project.project_detail%></p>
+    </div>
+    
+  </div>
+  <div class="row mb-1">
+    <div class="col-md-6">
+      Project Starting Date:
+    </div>
+    <div class="col-md-6">
+      <%=project.project_date.toLocaleDateString()%>
+    </div>
+  </div>
+  <div class="row mb-1">
+    <div class="col-md-6">
+      Project Source:
+    </div>
+    <div class="col-md-6">
+      <%=project.project_type%>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+
+  </div>
+  <%- include('base/footer')%>
+  <script>
+    function previousePage(){
+      console.log(`call previouse page`);
+      window.history.back()
+    }
+  </script>
+
+   
+  

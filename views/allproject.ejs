@@ -1,0 +1,43 @@
+<%- include('base/profile')%>
+
+  <div class="col-md-9 task-login-right">
+    <h3><%=title%></h3>
+    <hr>
+         <%if(projectDetails.length){%>
+          <div class="row">
+           <div class="task-box">
+            <div class="d-flex">
+              <h5>Project Name</h5>
+          
+              <h5>Technology</h5>
+        </div>
+       
+            <div class="row px-3 mx-0">
+
+          <% projectDetails.forEach(function(project,index){ %>
+              <div class="col-md-6"><h6># <%=project.project_title %></h6></div>
+                <div class="col-md-4">
+                  <p>
+                  <%=project.project_tech %>
+                </p>
+                </div>
+                <%if(project.isProjectActive){%>
+                <div class="col-md-2">
+                  <a href="/project/deactive/<%=project._id%>" class="task-link">Done</a>
+                </div>
+                <%}%>
+           <% }) %>
+
+              <% }else{ %>
+                <h5>Projects Not Available</h5>
+                <%}%>
+            </div>
+            </div>
+
+           
+      </div>
+
+    </div>
+  </div>
+  </div>
+  <%- include('base/footer')%>

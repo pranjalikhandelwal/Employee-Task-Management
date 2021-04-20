@@ -1,0 +1,18 @@
+<%- include('base/profile')%>
+
+  <div class="col-md-9 task-login-right">
+    <h3>Project Snaps</h3>
+    <hr>
+
+    <div class="row">
+      <%if(projectDetails){%>
+        <% projectDetails.forEach(function(project,index){ %>
+          <div class="col-md-4">
+           <a href="/projectsnap/<%=project.id%>"><img class="snap-img" src="uploads/<%=project.project_photo%>" alt="Project Sanps"></a>
+            <p class="snap-title"><%=project.project_title %></p>
+          </div>
+          <% }) %>
+            <% } %>
+    </div>
+  </div>
+  <%- include('base/footer')%>
